@@ -9,6 +9,7 @@ import Contact from "@/components/contact"
 import Booking from "@/components/booking"
 import Footer from "@/components/footer"
 import AnimatedBackground from "@/components/animated-background"
+import { ChatBot } from "@/components/chatbot"
 
 export default function Home() {
   const [showBooking, setShowBooking] = useState(false)
@@ -23,6 +24,7 @@ export default function Home() {
       <Contact />
       {showBooking && <Booking onClose={() => setShowBooking(false)} />}
       <Footer />
+      <ChatBot />
     </main>
   )
 }

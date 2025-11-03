@@ -50,7 +50,7 @@ export default function Navbar() {
               <span className="text-background font-bold text-lg">G</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-foreground">Gopal ji</h1>
+              <h1 className="text-lg font-bold text-foreground">Shree Gopala</h1>
               <p className="text-xs text-muted-foreground">Auto Parts</p>
             </div>
           </div>
@@ -68,7 +68,17 @@ export default function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-foreground group-hover:w-full transition-all duration-500 ease-out" />
               </a>
             ))}
-            <button className="px-6 py-2 bg-foreground text-background rounded-lg hover:shadow-lg hover:shadow-foreground/50 transition-all duration-300 transform hover:scale-105 font-semibold">
+            <button
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.querySelector("#contact")
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth", block: "start" })
+                  setIsOpen(false)
+                }
+              }}
+              className="px-6 py-2 bg-foreground text-background rounded-lg hover:shadow-lg hover:shadow-foreground/50 transition-all duration-300 transform hover:scale-105 font-semibold cursor-pointer"
+            >
               Inquiry
             </button>
           </div>
@@ -94,7 +104,17 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
-            <button className="w-full px-4 py-2 bg-foreground text-background rounded-lg hover:shadow-lg hover:shadow-foreground/50 transition-all font-semibold">
+            <button
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.querySelector("#contact")
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth", block: "start" })
+                  setIsOpen(false)
+                }
+              }}
+              className="w-full px-4 py-2 bg-foreground text-background rounded-lg hover:shadow-lg hover:shadow-foreground/50 transition-all font-semibold cursor-pointer"
+            >
               Inquiry
             </button>
           </div>

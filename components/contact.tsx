@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Loader2, CheckCircle, AlertCircle } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,21 +13,54 @@ export default function Contact() {
     message: "",
   })
 
+  const [isLoading, setIsLoading] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState("")
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    setFormData({ name: "", email: "", phone: "", message: "" })
+    setIsLoading(true)
+    setSubmitStatus("idle")
+    setErrorMessage("")
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        setFormData({ name: "", email: "", phone: "", message: "" })
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus("idle"), 5000)
+      } else {
+        setSubmitStatus("error")
+        setErrorMessage(data.error || "Failed to send message")
+      }
+    } catch (error) {
+      setSubmitStatus("error")
+      setErrorMessage("An error occurred. Please try again.")
+      console.error("Form submission error:", error)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const contactInfo = [
-    { icon: Phone, label: "Phone", value: "+91 XXXX-XXXX-XXXX" },
-    { icon: Mail, label: "Email", value: "info@gopalji-autoparts.com" },
-    { icon: MapPin, label: "Location", value: "India & International" },
+    { icon: Phone, label: "Phone", value: "+91-121-4328707 / +91-9897671442" },
+    { icon: Mail, label: "Email", value: "shreegopalaenterprises@gmail.com" },
+    { icon: MapPin, label: "Location", value: "Meerut City, India & International" },
   ]
 
   return (
@@ -54,16 +87,74 @@ export default function Contact() {
               return (
                 <div
                   key={index}
-                  className="bg-card border border-border rounded-xl p-8 text-center hover:border-primary/50 transition-all duration-300 transform hover:scale-105 group"
+                  className="bg-card border border-border rounded-xl p-8 text-center hover:border-primary/50 transition-all duration-300 transform hover:scale-105 group cursor-pointer"
                 >
                   <div className="inline-block p-4 bg-primary/10 rounded-lg mb-4 group-hover:bg-primary/20 transition-colors">
                     <Icon className="text-primary" size={32} />
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-foreground">{info.label}</h3>
-                  <p className="text-muted-foreground">{info.value}</p>
+                  {info.label === "Phone" ? (
+                    <a
+                      href="tel:+919897671442"
+                      className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                    >
+                      {info.value}
+                    </a>
+                  ) : info.label === "Email" ? (
+                    <a
+                      href="mailto:shreegopalaenterprises@gmail.com"
+                      className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                    >
+                      {info.value}
+                    </a>
+                  ) : (
+                    <p className="text-muted-foreground">{info.value}</p>
+                  )}
                 </div>
               )
             })}
+          </div>
+
+          <div className="max-w-2xl mx-auto bg-card border border-border rounded-xl p-8 mb-8">
+            <h3 className="text-2xl font-bold mb-6 text-foreground">Company Information</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+              <div>
+                <p className="text-muted-foreground mb-1">Company Name</p>
+                <p className="text-foreground font-semibold">Shree Gopala Enterprises</p>
+              </div>
+              <div>
+                <p className="text-muted-foreground mb-1">GSTIN</p>
+                <p className="text-foreground font-semibold">09ABVPT3316Q1ZL</p>
+              </div>
+              <div className="sm:col-span-2">
+                <p className="text-muted-foreground mb-1">Address</p>
+                <p className="text-foreground font-semibold">
+                  G-32, New Dev Shree Plaza, T. P. Nagar, Baghpat Road, Meerut City - 250002 (U.P.) India
+                </p>
+              </div>
+              <div>
+                <p className="text-muted-foreground mb-1">Email</p>
+                <a
+                  href="mailto:info@shreegopala.com"
+                  className="text-foreground font-semibold hover:text-primary transition-colors cursor-pointer"
+                >
+                  info@shreegopala.com
+                </a>
+              </div>
+              <div>
+                <p className="text-muted-foreground mb-1">Website</p>
+                <p className="text-foreground font-semibold">www.shreegopala.com</p>
+              </div>
+              <div>
+                <p className="text-muted-foreground mb-1">Mobile</p>
+                <a
+                  href="tel:+917017854020"
+                  className="text-foreground font-semibold hover:text-primary transition-colors cursor-pointer"
+                >
+                  +91-7017854020
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Contact form */}
@@ -80,6 +171,7 @@ export default function Contact() {
                     placeholder="Your name"
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
                     required
+                    disabled={isLoading}
                   />
                 </div>
                 <div>
@@ -92,6 +184,7 @@ export default function Contact() {
                     placeholder="your@email.com"
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
                     required
+                    disabled={isLoading}
                   />
                 </div>
               </div>
@@ -105,6 +198,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="+91 XXXX-XXXX-XXXX"
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors"
+                  disabled={isLoading}
                 />
               </div>
 
@@ -118,15 +212,40 @@ export default function Contact() {
                   rows={5}
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
                   required
+                  disabled={isLoading}
                 />
               </div>
 
+              {submitStatus === "success" && (
+                <div className="flex items-center gap-3 p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
+                  <CheckCircle className="text-green-500" size={20} />
+                  <p className="text-green-500 font-semibold">Message sent successfully! We'll get back to you soon.</p>
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
+                  <AlertCircle className="text-red-500" size={20} />
+                  <p className="text-red-500 font-semibold">{errorMessage}</p>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+                disabled={isLoading}
+                className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
               >
-                <Send size={20} />
-                Send Message
+                {isLoading ? (
+                  <>
+                    <Loader2 size={20} className="animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={20} />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           </div>

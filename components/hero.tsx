@@ -50,10 +50,28 @@ export default function Hero() {
         <div
           className={`flex flex-col sm:flex-row gap-4 justify-center mb-12 transform transition-all duration-1000 delay-400 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <button className="px-8 py-4 bg-white text-black rounded-lg font-semibold hover:shadow-lg hover:shadow-white/50 transition-all duration-300 transform hover:scale-105">
+          <button
+            onClick={(e) => {
+              e.preventDefault()
+              const element = document.querySelector("#products")
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
+            }}
+            className="px-8 py-4 bg-white text-black rounded-lg font-semibold hover:shadow-lg hover:shadow-white/50 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+          >
             Explore Products
           </button>
-          <button className="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300">
+          <button
+            onClick={(e) => {
+              e.preventDefault()
+              const element = document.querySelector("#contact")
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
+            }}
+            className="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 cursor-pointer"
+          >
             Request Quote
           </button>
         </div>

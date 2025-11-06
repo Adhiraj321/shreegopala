@@ -76,14 +76,18 @@ export default function AboutUs() {
 
           {/* Main content */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Left side - Image placeholder */}
+            {/* Left side - Video */}
             <div className="relative h-96 rounded-xl overflow-hidden border border-border">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <div className="text-center">
-                  <Wrench className="text-primary mx-auto mb-4" size={64} />
-                  <p className="text-muted-foreground">Premium Welding & Cutting Equipment</p>
-                </div>
-              </div>
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/assets/about_us.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
 
             {/* Right side - Text */}

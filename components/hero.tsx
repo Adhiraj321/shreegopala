@@ -32,8 +32,7 @@ export default function Hero() {
           className={`transform transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance text-white">
-            <span className="text-white">Premium </span>
-            <span className="text-white">Automobile Parts</span>
+            <span className="text-white">Welding and Cutting Product </span>
           </h1>
         </div>
 

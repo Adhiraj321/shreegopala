@@ -150,7 +150,7 @@ export function ChatBot() {
                         className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                       >
                         <div
-                          className={`break-words whitespace-pre-wrap max-w-[80%] rounded-2xl px-4 py-2 ${
+                          className={`wrap-break-word whitespace-pre-wrap max-w-[80%] rounded-2xl px-4 py-2 ${
                             message.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted"
                           }`}
                         >
@@ -198,7 +198,7 @@ export function ChatBot() {
                           variant="outline"
                           size="sm"
                           onClick={() => handleSuggestedQuestion(question)}
-                          className="rounded-full text-xs"
+                          className="rounded-full text-xs transition-colors hover:bg-white! hover:text-black! hover:border-white! focus-visible:ring-2 focus-visible:ring-white/40"
                         >
                           {question}
                         </Button>

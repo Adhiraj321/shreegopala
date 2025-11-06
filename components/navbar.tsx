@@ -51,7 +51,7 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block">
               <h1 className="text-lg font-bold text-foreground">Shree Gopala</h1>
-              <p className="text-xs text-muted-foreground">Auto Parts</p>
+              <p className="text-xs text-muted-foreground">Welding & Cutting</p>
             </div>
           </div>
 

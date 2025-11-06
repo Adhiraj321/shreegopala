@@ -8,10 +8,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Gopal ji Auto Parts - Premium Automobile Components",
+  title: "Shree Enterprise",
   description:
     "Premium automobile parts supplier serving international markets with quality components and expert service",
-  generator: "v0.app",
 }
 
 export default function RootLayout({

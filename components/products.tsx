@@ -18,7 +18,7 @@ export default function Products({ onBooking }: ProductsProps) {
       description: "High-performance engine parts for all vehicle types",
       price: "Custom Quote",
       icon: Zap,
-      image: "/engine-components-auto-parts.jpg",
+      image: "/assets/1.jpeg",
       features: ["Precision engineered", "OEM compatible", "Tested quality"],
     },
     {
@@ -27,7 +27,7 @@ export default function Products({ onBooking }: ProductsProps) {
       description: "Durable transmission systems and components",
       price: "Custom Quote",
       icon: Truck,
-      image: "/transmission-parts-automotive.jpg",
+      image: "/assets/2.jpeg",
       features: ["Smooth operation", "Long lifespan", "Global standard"],
     },
     {
@@ -36,7 +36,7 @@ export default function Products({ onBooking }: ProductsProps) {
       description: "Advanced braking solutions for safety",
       price: "Custom Quote",
       icon: Shield,
-      image: "/brake-system-car-parts.jpg",
+      image: "/assets/3.jpeg",
       features: ["Enhanced safety", "Reliable stopping", "Premium quality"],
     },
     {
@@ -45,7 +45,7 @@ export default function Products({ onBooking }: ProductsProps) {
       description: "Complete suspension and steering components",
       price: "Custom Quote",
       icon: ShoppingCart,
-      image: "/suspension-parts-vehicle.jpg",
+      image: "/assets/4.jpeg",
       features: ["Smooth ride", "Durability", "Performance"],
     },
   ]

@@ -116,8 +116,8 @@ export function ChatBot() {
             transition={{ duration: 0.2 }}
             className="fixed bottom-4 left-4 right-4 z-50 sm:bottom-6 sm:right-6 sm:left-auto w-auto sm:w-full sm:max-w-sm"
           >
-            <Card className="border-none shadow-xl rounded-2xl overflow-hidden">
-              <CardHeader className="bg-primary text-primary-foreground p-4">
+            <Card className="border-none shadow-xl rounded-2xl overflow-hidden !py-0">
+              <CardHeader className="bg-primary text-primary-foreground p-4 rounded-t-2xl !px-4">
                 <div className="flex justify-between items-center">
                   <CardTitle className="text-lg font-medium flex items-center gap-2">
                     <Avatar className="h-8 w-8 bg-primary-foreground text-primary flex items-center justify-center">
@@ -130,7 +130,7 @@ export function ChatBot() {
                       variant="ghost"
                       size="icon"
                       onClick={() => setIsOpen(false)}
-                      className="text-primary-foreground hover:text-primary-foreground hover:bg-primary/90 rounded-full h-8 w-8"
+                      className="text-primary-foreground hover:text-primary-foreground hover:bg-white/20 rounded-full h-8 w-8 transition-all duration-200"
                     >
                       <X className="h-4 w-4" />
                       <span className="sr-only">Close</span>
@@ -150,11 +150,34 @@ export function ChatBot() {
                         className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                       >
                         <div
+                          data-chatbot-message
                           className={`wrap-break-word whitespace-pre-wrap max-w-[80%] rounded-2xl px-4 py-2 ${
                             message.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted"
                           }`}
+                          style={{ textTransform: "none", fontVariant: "normal", fontFamily: "system-ui, -apple-system, sans-serif" }}
                         >
-                          <ReactMarkDown>{message.content}</ReactMarkDown>
+                          <div 
+                            className="font-normal text-sm sm:text-base"
+                            style={{ textTransform: "none" }}
+                          >
+                            <div style={{ textTransform: "none" }}>
+                              <ReactMarkDown
+                                components={{
+                                  p: ({ children }) => <p style={{ textTransform: "none" }}>{children}</p>,
+                                  strong: ({ children }) => <strong style={{ textTransform: "none", fontWeight: "bold" }} className="font-bold">{children}</strong>,
+                                  em: ({ children }) => <em style={{ textTransform: "none" }}>{children}</em>,
+                                  h1: ({ children }) => <h1 style={{ textTransform: "none", fontWeight: "bold" }} className="font-bold text-base mb-2">{children}</h1>,
+                                  h2: ({ children }) => <h2 style={{ textTransform: "none", fontWeight: "bold" }} className="font-bold text-sm mb-1.5">{children}</h2>,
+                                  h3: ({ children }) => <h3 style={{ textTransform: "none", fontWeight: "bold" }} className="font-bold text-sm mb-1">{children}</h3>,
+                                  li: ({ children }) => <li style={{ textTransform: "none" }}>{children}</li>,
+                                  ul: ({ children }) => <ul style={{ textTransform: "none" }}>{children}</ul>,
+                                  ol: ({ children }) => <ol style={{ textTransform: "none" }}>{children}</ol>,
+                                }}
+                              >
+                                {message.content}
+                              </ReactMarkDown>
+                            </div>
+                          </div>
                         </div>
                       </motion.div>
                     ))}
@@ -208,10 +231,12 @@ export function ChatBot() {
                 )}
                 <form onSubmit={handleSendMessage} className="flex w-full gap-2">
                   <Input
+                    data-chatbot-input
                     placeholder="Type your message..."
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     className="rounded-xl border-2 border-white/30"
+                    style={{ textTransform: "none", fontFamily: "system-ui, -apple-system, sans-serif" }}
                     disabled={isLoading}
                   />
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

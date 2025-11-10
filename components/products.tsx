@@ -40,9 +40,24 @@ export default function Products({ onBooking }: ProductsProps) {
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             Our <span className="text-primary">Premium Products</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
             Comprehensive range of welding and cutting products meeting international standards
           </p>
+          <a
+            href="#catalog"
+            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-semibold"
+          >
+            View Product Catalogs
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
         </div>
 
         {/* Products grid */}

@@ -243,3 +243,25 @@
 .animate-navbar-float {
   animation: navbarFloat 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+/* Chatbot text styling - force normal case */
+[data-chatbot-message] {
+  text-transform: none !important;
+  font-variant: normal !important;
+}
+
+[data-chatbot-message] * {
+  text-transform: none !important;
+  font-variant: normal !important;
+}
+
+/* Chatbot input field styling */
+[data-chatbot-input] {
+  text-transform: none !important;
+  font-variant: normal !important;
+  font-family: system-ui, -apple-system, sans-serif !important;
+}
+
+[data-chatbot-input]::placeholder {
+  text-transform: none !important;
+}

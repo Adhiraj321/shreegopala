@@ -4,6 +4,7 @@ import { useState } from "react"
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
 import Products from "@/components/products"
+import Catalog from "@/components/catalog"
 import AboutUs from "@/components/about-us"
 import Contact from "@/components/contact"
 import Booking from "@/components/booking"
@@ -20,6 +21,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Products onBooking={() => setShowBooking(true)} />
+      <Catalog />
       <AboutUs />
       <Contact />
       {showBooking && <Booking onClose={() => setShowBooking(false)} />}

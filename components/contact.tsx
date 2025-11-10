@@ -58,7 +58,7 @@ export default function Contact() {
   }
 
   const contactInfo = [
-    { icon: Phone, label: "Phone", value: "+91-121-4328707 / +91-9897671442" },
+    { icon: Phone, label: "Phone", value: "+91-121-4328707 / +91-9897671442 / +91-8218613982" },
     { icon: Mail, label: "Email", value: "shreegopalaenterprises@gmail.com" },
     { icon: MapPin, label: "Location", value: "Meerut City, India & International" },
   ]
@@ -80,35 +80,66 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
             {/* Contact info cards */}
             {contactInfo.map((info, index) => {
               const Icon = info.icon
               return (
                 <div
                   key={index}
-                  className="bg-card border border-border rounded-xl p-8 text-center hover:border-primary/50 transition-all duration-300 transform hover:scale-105 group cursor-pointer"
+                  className="bg-card border border-border rounded-xl p-6 sm:p-8 text-center hover:border-primary/50 transition-all duration-300 transform hover:scale-105 group cursor-pointer"
                 >
-                  <div className="inline-block p-4 bg-primary/10 rounded-lg mb-4 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="text-primary" size={32} />
+                  <div className="inline-block p-3 sm:p-4 bg-primary/10 rounded-lg mb-3 sm:mb-4 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="text-primary" size={28} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-foreground">{info.label}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-foreground">{info.label}</h3>
                   {info.label === "Phone" ? (
-                    <a
-                      href="tel:+919897671442"
-                      className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
-                    >
-                      {info.value}
-                    </a>
+                    <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-sm sm:text-base text-muted-foreground">
+                      <a
+                        href="https://wa.me/911214328707"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
+                      >
+                        +91-121-4328707
+                      </a>
+                      <span className="text-muted-foreground hidden sm:inline">/</span>
+                      <a
+                        href="https://wa.me/919897671442"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
+                      >
+                        +91-9897671442
+                      </a>
+                      <span className="text-muted-foreground hidden sm:inline">/</span>
+                      <a
+                        href="https://wa.me/918218613982"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary transition-colors cursor-pointer whitespace-nowrap"
+                      >
+                        +91-8218613982
+                      </a>
+                    </div>
                   ) : info.label === "Email" ? (
                     <a
                       href="mailto:shreegopalaenterprises@gmail.com"
-                      className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                      className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer break-words px-2"
+                    >
+                      {info.value}
+                    </a>
+                  ) : info.label === "Location" ? (
+                    <a
+                      href="https://maps.app.goo.gl/wAjZugtPvavoiGwp6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer break-words px-2"
                     >
                       {info.value}
                     </a>
                   ) : (
-                    <p className="text-muted-foreground">{info.value}</p>
+                    <p className="text-muted-foreground text-sm sm:text-base">{info.value}</p>
                   )}
                 </div>
               )
@@ -149,9 +180,15 @@ export default function Contact() {
                 <p className="text-muted-foreground mb-1">Mobile</p>
                 <a
                   href="tel:+917017854020"
-                  className="text-foreground font-semibold hover:text-primary transition-colors cursor-pointer"
+                  className="text-foreground font-semibold hover:text-primary transition-colors cursor-pointer block mb-1"
                 >
                   +91-7017854020
+                </a>
+                <a
+                  href="tel:+918218613982"
+                  className="text-foreground font-semibold hover:text-primary transition-colors cursor-pointer block"
+                >
+                  +91-8218613982
                 </a>
               </div>
             </div>

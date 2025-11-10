@@ -10,14 +10,14 @@ export default function Footer() {
   return (
     <footer className="relative bg-card border-t border-border">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-t from-primary/5 to-transparent pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-linear-to-br from-primary to-accent rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold">G</span>
               </div>
               <div>
@@ -32,7 +32,7 @@ export default function Footer() {
             <div className="space-y-2">
               {certifications.map((cert, i) => (
                 <div key={i} className="flex items-center gap-2 text-xs">
-                  <CheckCircle size={14} className="text-primary flex-shrink-0" />
+                  <CheckCircle size={14} className="text-primary shrink-0" />
                   <span className="text-muted-foreground">{cert}</span>
                 </div>
               ))}
@@ -56,26 +56,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Products */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Products</h4>
-            <ul className="space-y-2">
-              {["Engine Components", "Transmission Parts", "Brake Systems", "Suspension Parts"].map((product) => (
-                <li key={product}>
-                  <a href="#products" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                    {product}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contact */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <Phone size={16} className="text-primary mt-1 flex-shrink-0" />
+                <Phone size={16} className="text-primary mt-1 shrink-0" />
                 <div className="text-sm">
                   <a
                     href="tel:+91-121-4328707"
@@ -89,10 +75,16 @@ export default function Footer() {
                   >
                     +91-9897671442
                   </a>
+                  <a
+                    href="tel:+91-8218613982"
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer block"
+                  >
+                    +91-8218613982
+                  </a>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <Mail size={16} className="text-primary mt-1 flex-shrink-0" />
+                <Mail size={16} className="text-primary mt-1 shrink-0" />
                 <div className="text-sm">
                   <a
                     href="mailto:shreegopalaenterprises@gmail.com"
@@ -109,9 +101,29 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <MapPin size={16} className="text-primary mt-1 flex-shrink-0" />
+                <MapPin size={16} className="text-primary mt-1 shrink-0" />
                 <span className="text-muted-foreground text-sm">Meerut City, India</span>
               </div>
+            </div>
+          </div>
+
+          {/* Google Maps */}
+          <div className="md:col-span-2 lg:col-span-1">
+            <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+              <MapPin size={20} className="text-primary" />
+              Our Location
+            </h4>
+            <div className="rounded-xl overflow-hidden border border-border">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d876.0453908809801!2d77.681234272079!3d28.971169183347726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c645b9f579c33%3A0x65bd0eb6241408e5!2sShree%20Gopala%20Enterprises!5e1!3m2!1sen!2sin!4v1762757160291!5m2!1sen!2sin"
+                width="100%"
+                height="250"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+              />
             </div>
           </div>
         </div>
@@ -120,13 +132,13 @@ export default function Footer() {
         <div className="border-t border-border mb-8" />
 
         {/* Bottom section */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm">
+        <div className="flex items-center justify-center">
+          <p className="text-muted-foreground text-sm text-center">
             © {currentYear} Shree Gopala Enterprises. All rights reserved. GSTIN: 09ABVPT3316Q1ZL
           </p>
 
           {/* Social links */}
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             {[
               { icon: Facebook, label: "Facebook", href: "https://facebook.com/shreegopala" },
               { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/shreegopala" },
@@ -146,7 +158,7 @@ export default function Footer() {
                 </a>
               )
             })}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

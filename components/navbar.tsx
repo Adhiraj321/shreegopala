@@ -10,11 +10,19 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
+    let ticking = false
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50)
+          ticking = false
+        })
+        ticking = true
+      }
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -36,10 +44,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ease-out ${
+      className={`fixed z-50 transition-all duration-700 ease-in-out ${
         isScrolled
-          ? "top-4 left-4 right-4 mx-auto max-w-7xl rounded-2xl bg-background/95 backdrop-blur-xl border border-border shadow-2xl"
-          : "top-0 left-0 right-0 bg-background/80 backdrop-blur-md border-b border-border"
+          ? "top-4 left-4 right-4 mx-auto max-w-7xl w-auto rounded-2xl bg-background/95 backdrop-blur-xl border border-border shadow-2xl"
+          : "top-0 left-0 right-0 w-full bg-background/80 backdrop-blur-md border-b border-border rounded-none"
       }`}
     >
       <div className="px-4 sm:px-6 lg:px-8">
@@ -50,8 +58,8 @@ export default function Navbar() {
               <span className="text-background font-bold text-lg">G</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg font-bold text-foreground">Shree Gopala</h1>
-              <p className="text-xs text-muted-foreground">Welding & Cutting</p>
+              <h1 className="text-lg font-bold text-foreground">Shree Gopala Enterprises</h1>
+              <p className="text-xs text-muted-foreground">Welding & Cutting Products</p>
             </div>
           </div>
 

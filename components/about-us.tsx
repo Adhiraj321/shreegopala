@@ -66,7 +66,10 @@ export default function AboutUs() {
           {/* Section header */}
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-              About <span className="text-primary">Shree Gopala Enterprises</span>
+              About{" "}
+              <span className="text-red-600">Shree</span>{" "}
+              <span className="text-blue-600">Gopala</span>{" "}
+              <span className="text-red-600">Enterprises</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
               ISO 9001-2015 & CE & WHO-GMP Certified - Manufacturers & Exporters of RED EAGLE BRAND Welding and Cutting
@@ -84,6 +87,7 @@ export default function AboutUs() {
                 loop
                 muted
                 playsInline
+                preload="metadata"
               >
                 <source src="/assets/about_us.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -95,7 +99,8 @@ export default function AboutUs() {
               <div>
                 <h3 className="text-2xl font-bold mb-3 text-foreground">Our Business</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We are leading manufacturers and exporters of RED EAGLE BRAND welding and cutting equipment,
+                  We are leading manufacturers and exporters of<br />
+                  <span className="font-semibold">RED EAGLE BRAND</span> welding and cutting equipment,
                   accessories, and consumables. We specialize in brazing products, HSS and carbide cutting tools,
                   industrial and medical gas regulators, and a comprehensive range of specialty alloys for welding
                   applications.
@@ -123,7 +128,7 @@ export default function AboutUs() {
                     "Authorized distributor of world-class brands",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                      <span className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
                       <span className="text-foreground">{item}</span>
                     </li>
                   ))}
@@ -179,7 +184,7 @@ export default function AboutUs() {
                   <ul className="space-y-2">
                     {category.items.map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}

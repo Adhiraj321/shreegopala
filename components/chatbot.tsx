@@ -211,7 +211,7 @@ export function ChatBot() {
                     placeholder="Type your message..."
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    className="rounded-xl"
+                    className="rounded-xl border-2 border-white/30"
                     disabled={isLoading}
                   />
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

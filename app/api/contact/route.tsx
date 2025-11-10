@@ -66,7 +66,7 @@ export async function POST(request: Request) {
           <div style="margin: 20px 0;">
             <h3 style="color: #000;">Contact Information:</h3>
             <p>
-              <strong>Phone:</strong> +91-121-4328707 / +91-9897671442<br>
+              <strong>Phone:</strong> +91-121-4328707 / +91-9897671442 / +91-8218613982<br>
               <strong>Email:</strong> shreegopalaenterprises@gmail.com<br>
               <strong>Website:</strong> www.shreegopala.com<br>
               <strong>Address:</strong> G-32, New Dev Shree Plaza, T. P. Nagar, Baghpat Road, Meerut City - 250002 (U.P.) India

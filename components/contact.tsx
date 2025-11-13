@@ -59,7 +59,7 @@ export default function Contact() {
 
   const contactInfo = [
     { icon: Phone, label: "Phone", value: "+91-121-4328707 / +91-9897671442 / +91-8218613982" },
-    { icon: Mail, label: "Email", value: "shreegopalaenterprises@gmail.com" },
+    { icon: Mail, label: "Email", value: "info@shreegopala.com" },
     { icon: MapPin, label: "Location", value: "Meerut City, India & International" },
   ]
 
@@ -124,7 +124,7 @@ export default function Contact() {
                     </div>
                   ) : info.label === "Email" ? (
                     <a
-                      href="mailto:shreegopalaenterprises@gmail.com"
+                      href="mailto:info@shreegopala.com"
                       className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer break-words px-2"
                     >
                       {info.value}

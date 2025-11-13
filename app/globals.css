@@ -3,14 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Added custom Tanker font */
-@font-face {
-  font-family: "Tanker";
-  src: url("/fonts/tanker-regular.woff2") format("woff2"), url("/fonts/tanker-regular.woff") format("woff"),
-    url("/fonts/tanker-regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
+/* Exo font imported via Google Fonts in layout.tsx */
 
 :root {
   /* Updated to pure black and white theme */
@@ -85,8 +78,8 @@
 }
 
 @theme inline {
-  /* Updated font to use Tanker */
-  --font-sans: "Tanker", "Geist", "Geist Fallback";
+  /* Updated font to use Exo */
+  --font-sans: var(--font-exo), "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);

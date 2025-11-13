@@ -44,7 +44,7 @@ export default function Hero() {
           }`}
         >
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance text-white">
-            <span className="text-white block"> RED EAGLE </span>
+            <span className="text-red-600 block"> RED EAGLE </span>
             <span className="text-white block">
               {" "}
               WELDING AND CUTTING PRODUCTS{" "}

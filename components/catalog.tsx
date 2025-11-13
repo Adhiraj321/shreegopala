@@ -7,14 +7,20 @@ export default function Catalog() {
     {
       id: 1,
       name: "Welding Products Catalog",
-      file: "/catalog/7_WELDING_PRODUCTS_CATALOG.pdf",
+      file: "/catalog/weilding_products.pdf",
       description: "Complete catalog of our welding and cutting products",
     },
     {
       id: 2,
-      name: "Alloys Catalog",
-      file: "/catalog/alloys.pdf",
-      description: "Comprehensive catalog of specialty alloys and materials",
+      name: "Gas and Plasma Catalog",
+      file: "/catalog/gas_and_plasma.pdf",
+      description: "Comprehensive catalog of gas and plasma cutting products",
+    },
+    {
+      id: 3,
+      name: "Wire Brush Catalog",
+      file: "/catalog/Wire_Brush_RED_EAGLE.pdf",
+      description: "Complete catalog of wire brush products and accessories",
     },
   ]
 
@@ -45,7 +51,7 @@ export default function Catalog() {
         </div>
 
         {/* Catalog cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {catalogs.map((catalog, index) => (
             <div
               key={catalog.id}

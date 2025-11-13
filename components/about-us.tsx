@@ -7,7 +7,7 @@ export default function AboutUs() {
     { icon: Globe, label: "Global Reach", value: "50+ Countries" },
     { icon: Users, label: "Customers", value: "10,000+" },
     { icon: Award, label: "Quality", value: "ISO Certified" },
-    { icon: Zap, label: "Experience", value: "25+ Years" },
+    { icon: Zap, label: "Experience", value: "40+ Years" },
   ]
 
   const certifications = ["ISO 9001-2015", "CE Certified", "WHO-GMP Certified"]
@@ -54,7 +54,7 @@ export default function AboutUs() {
     },
   ]
 
-  const brands = ["NORTH", "FRONTLINE", "BLACK WOLF", "WELD CRAFT"]
+  const brands = ["Red Eagle", "NORTH", "FRONTLINE", "Par Weld"]
 
   return (
     <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8">

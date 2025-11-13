@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -54,11 +55,21 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="w-10 h-10 bg-foreground rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-              <span className="text-background font-bold text-lg">G</span>
+            <div className="w-10 h-10 rounded-lg overflow-hidden transform group-hover:scale-110 transition-transform duration-300 relative">
+              <Image
+                src="/assets/logo.jpg"
+                alt="Shree Gopala Enterprises Logo"
+                fill
+                className="object-cover"
+                sizes="40px"
+              />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg font-bold text-foreground">Shree Gopala Enterprises</h1>
+              <h1 className="text-lg font-bold">
+                <span className="text-red-600">Shree</span>{" "}
+                <span className="text-blue-600">Gopala</span>{" "}
+                <span className="text-red-600">Enterprises</span>
+              </h1>
               <p className="text-xs text-muted-foreground">Welding & Cutting Products</p>
             </div>
           </div>

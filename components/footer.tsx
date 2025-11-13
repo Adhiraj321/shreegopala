@@ -22,11 +22,11 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="font-bold text-foreground">Shree Gopala</h3>
-                <p className="text-sm text-muted-foreground">Auto Parts</p>
+                <p className="text-sm text-muted-foreground">Welding & Cutting Products</p>
               </div>
             </div>
             <p className="text-muted-foreground text-base mb-4">
-              ISO 9001-2015 & CE & WHO-GMP Certified - Premium automobile parts supplier serving global markets with
+              ISO 9001-2015 & CE & WHO-GMP Certified - Premium welding and cutting products manufacturer and exporter serving global markets with
               quality and reliability.
             </p>
             <div className="space-y-2">

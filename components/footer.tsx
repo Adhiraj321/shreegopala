@@ -22,16 +22,16 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="font-bold text-foreground">Shree Gopala</h3>
-                <p className="text-xs text-muted-foreground">Auto Parts</p>
+                <p className="text-sm text-muted-foreground">Auto Parts</p>
               </div>
             </div>
-            <p className="text-muted-foreground text-sm mb-4">
+            <p className="text-muted-foreground text-base mb-4">
               ISO 9001-2015 & CE & WHO-GMP Certified - Premium automobile parts supplier serving global markets with
               quality and reliability.
             </p>
             <div className="space-y-2">
               {certifications.map((cert, i) => (
-                <div key={i} className="flex items-center gap-2 text-xs">
+                <div key={i} className="flex items-center gap-2 text-sm">
                   <CheckCircle size={14} className="text-primary shrink-0" />
                   <span className="text-muted-foreground">{cert}</span>
                 </div>
@@ -47,7 +47,7 @@ export default function Footer() {
                 <li key={link}>
                   <a
                     href={`#${link.toLowerCase().replace(" ", "")}`}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    className="text-muted-foreground hover:text-primary transition-colors text-base"
                   >
                     {link}
                   </a>
@@ -62,7 +62,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-2">
                 <Phone size={16} className="text-primary mt-1 shrink-0" />
-                <div className="text-sm">
+                <div className="text-base">
                   <a
                     href="tel:+91-121-4328707"
                     className="text-muted-foreground hover:text-primary transition-colors cursor-pointer block"
@@ -85,13 +85,7 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-2">
                 <Mail size={16} className="text-primary mt-1 shrink-0" />
-                <div className="text-sm">
-                  <a
-                    href="mailto:shreegopalaenterprises@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer block"
-                  >
-                    shreegopalaenterprises@gmail.com
-                  </a>
+                <div className="text-base">
                   <a
                     href="mailto:info@shreegopala.com"
                     className="text-muted-foreground hover:text-primary transition-colors cursor-pointer block"
@@ -102,7 +96,7 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-2">
                 <MapPin size={16} className="text-primary mt-1 shrink-0" />
-                <span className="text-muted-foreground text-sm">Meerut City, India</span>
+                <span className="text-muted-foreground text-base">Meerut City, India</span>
               </div>
             </div>
           </div>
@@ -133,7 +127,7 @@ export default function Footer() {
 
         {/* Bottom section */}
         <div className="flex items-center justify-center">
-          <p className="text-muted-foreground text-sm text-center">
+          <p className="text-muted-foreground text-base text-center">
             © {currentYear} Shree Gopala Enterprises. All rights reserved. GSTIN: 09ABVPT3316Q1ZL
           </p>
 

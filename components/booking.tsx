@@ -13,7 +13,7 @@ export default function Booking({ onClose }: BookingProps) {
     { number: "+91-8218613982", whatsapp: "918218613982" },
   ]
 
-  const email = "shreegopalaenterprises@gmail.com"
+  const email = "info@shreegopala.com"
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
@@ -35,7 +35,7 @@ export default function Booking({ onClose }: BookingProps) {
           {/* Email Option */}
           <a
             href={`mailto:${email}?subject=Order Inquiry`}
-            className="flex items-center gap-4 p-4 bg-background border border-border rounded-lg hover:border-primary/50 transition-all duration-300 transform hover:scale-105 cursor-pointer group"
+            className="flex items-center gap-4 p-4 bg-background border border-border rounded-lg hover:border-primary/50 transition-all duration-300 cursor-pointer group"
           >
             <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
               <Mail className="text-primary" size={24} />
@@ -51,7 +51,7 @@ export default function Booking({ onClose }: BookingProps) {
             href={`https://wa.me/${phoneNumbers[0].whatsapp}?text=Hello, I'm interested in your products`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 p-4 bg-background border border-border rounded-lg hover:border-primary/50 transition-all duration-300 transform hover:scale-105 cursor-pointer group"
+            className="flex items-center gap-4 p-4 bg-background border border-border rounded-lg hover:border-primary/50 transition-all duration-300 cursor-pointer group"
           >
             <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
               <MessageCircle className="text-primary" size={24} />
@@ -84,7 +84,7 @@ export default function Booking({ onClose }: BookingProps) {
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="w-full px-6 py-3 border-2 border-border text-foreground rounded-lg font-semibold hover:bg-background transition-colors"
+            className="w-full px-6 py-3 border-2 border-border text-foreground rounded-lg font-semibold hover:bg-background transition-all duration-300 transform hover:scale-105"
           >
             Close
           </button>

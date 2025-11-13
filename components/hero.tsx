@@ -20,10 +20,17 @@ export default function Hero() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
+        onError={(e) => {
+          console.error("Video failed to load:", e)
+        }}
+        onLoadedData={() => {
+          // Video loaded successfully
+        }}
       >
         <source src="/assets/video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
 
       {/* Dark overlay for better text readability */}
@@ -58,7 +65,7 @@ export default function Hero() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="text-lg sm:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl sm:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">
             Serving the Global Market within premium quality equipments,
             accessories, consumables, expert service and international
             reliability
@@ -91,7 +98,7 @@ export default function Hero() {
                 element.scrollIntoView({ behavior: "smooth", block: "start" });
               }
             }}
-            className="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 cursor-pointer"
+            className="px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 transform hover:scale-105 cursor-pointer"
           >
             Request Quote
           </button>

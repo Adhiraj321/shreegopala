@@ -75,7 +75,7 @@ export default function Contact() {
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
               Get in <span className="text-primary">Touch</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto">
               Have questions? We're here to help. Contact us for inquiries, quotes, or partnerships.
             </p>
           </div>
@@ -87,14 +87,14 @@ export default function Contact() {
               return (
                 <div
                   key={index}
-                  className="bg-card border border-border rounded-xl p-6 sm:p-8 text-center hover:border-primary/50 transition-all duration-300 transform hover:scale-105 group cursor-pointer"
+                  className="bg-card border border-border rounded-xl p-6 sm:p-8 text-center hover:border-primary/50 transition-all duration-300 group cursor-pointer"
                 >
                   <div className="inline-block p-3 sm:p-4 bg-primary/10 rounded-lg mb-3 sm:mb-4 group-hover:bg-primary/20 transition-colors">
                     <Icon className="text-primary" size={28} />
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-foreground">{info.label}</h3>
                   {info.label === "Phone" ? (
-                    <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-sm sm:text-base text-muted-foreground">
+                    <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-base sm:text-lg text-muted-foreground">
                       <a
                         href="https://wa.me/911214328707"
                         target="_blank"
@@ -125,7 +125,7 @@ export default function Contact() {
                   ) : info.label === "Email" ? (
                     <a
                       href="mailto:info@shreegopala.com"
-                      className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer break-words px-2"
+                      className="text-base sm:text-lg text-muted-foreground hover:text-primary transition-colors cursor-pointer break-words px-2"
                     >
                       {info.value}
                     </a>
@@ -134,12 +134,12 @@ export default function Contact() {
                       href="https://maps.app.goo.gl/wAjZugtPvavoiGwp6"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors cursor-pointer break-words px-2"
+                      className="text-base sm:text-lg text-muted-foreground hover:text-primary transition-colors cursor-pointer break-words px-2"
                     >
                       {info.value}
                     </a>
                   ) : (
-                    <p className="text-muted-foreground text-sm sm:text-base">{info.value}</p>
+                    <p className="text-muted-foreground text-base sm:text-lg">{info.value}</p>
                   )}
                 </div>
               )
@@ -148,7 +148,7 @@ export default function Contact() {
 
           <div className="max-w-2xl mx-auto bg-card border border-border rounded-xl p-8 mb-8">
             <h3 className="text-2xl font-bold mb-6 text-foreground">Company Information</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-base">
               <div>
                 <p className="text-muted-foreground mb-1">Company Name</p>
                 <p className="text-foreground font-semibold">Shree Gopala Enterprises</p>
@@ -199,7 +199,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold mb-2 text-foreground">Name</label>
+                  <label className="block text-base font-semibold mb-2 text-foreground">Name</label>
                   <input
                     type="text"
                     name="name"
@@ -212,7 +212,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold mb-2 text-foreground">Email</label>
+                  <label className="block text-base font-semibold mb-2 text-foreground">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -227,7 +227,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2 text-foreground">Phone</label>
+                <label className="block text-base font-semibold mb-2 text-foreground">Phone</label>
                 <input
                   type="tel"
                   name="phone"
@@ -240,7 +240,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold mb-2 text-foreground">Message</label>
+                <label className="block text-base font-semibold mb-2 text-foreground">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}

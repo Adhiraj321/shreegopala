@@ -45,7 +45,7 @@ export default function Catalog() {
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             Product <span className="text-primary">Catalogs</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto">
             Download or view our comprehensive product catalogs
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function Catalog() {
           {catalogs.map((catalog, index) => (
             <div
               key={catalog.id}
-              className="bg-card border border-border rounded-xl p-6 sm:p-8 hover:border-primary/50 transition-all duration-300 transform hover:scale-105 group"
+              className="bg-card border border-border rounded-xl p-6 sm:p-8 hover:border-primary/50 transition-all duration-300 group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-start gap-4 mb-6">
@@ -64,7 +64,7 @@ export default function Catalog() {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold mb-2 text-foreground">{catalog.name}</h3>
-                  <p className="text-sm text-muted-foreground">{catalog.description}</p>
+                  <p className="text-base text-muted-foreground">{catalog.description}</p>
                 </div>
               </div>
 
@@ -72,7 +72,7 @@ export default function Catalog() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={() => handleView(catalog.file)}
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-background border border-border rounded-lg hover:border-primary hover:text-primary transition-all duration-300 font-semibold"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-background border border-border rounded-lg hover:border-primary hover:text-primary transition-all duration-300 transform hover:scale-105 font-semibold"
                 >
                   <ExternalLink size={18} />
                   View PDF

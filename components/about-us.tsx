@@ -54,7 +54,7 @@ export default function AboutUs() {
     },
   ]
 
-  const brands = ["Red Eagle", "NORTH", "FRONTLINE", "Par Weld"]
+  const brands = ["RED EAGLE", "NORTH", "FRONTLINE", "PAR WELD"]
 
   return (
     <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8">
@@ -66,12 +66,14 @@ export default function AboutUs() {
           {/* Section header */}
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-              About{" "}
-              <span className="text-red-600">Shree</span>{" "}
-              <span className="text-blue-600">Gopala</span>{" "}
-              <span className="text-red-600">Enterprises</span>
+              <span className="block sm:inline">About</span>{" "}
+              <span className="block sm:inline">
+                <span className="text-red-600">Shree</span>{" "}
+                <span className="text-blue-600">Gopala</span>{" "}
+                <span className="text-red-600">Enterprises</span>
+              </span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            <p className="text-muted-foreground text-sm sm:text-xl max-w-3xl mx-auto whitespace-nowrap overflow-x-auto sm:whitespace-normal">
               ISO 9001-2015 & CE & WHO-GMP Certified - Manufacturers & Exporters of RED EAGLE BRAND Welding and Cutting
               Equipment, Industrial & Medical Gas Regulators, Cutting Tools, and Specialty Alloys
             </p>
@@ -88,6 +90,9 @@ export default function AboutUs() {
                 muted
                 playsInline
                 preload="metadata"
+                onError={(e) => {
+                  console.error("About video failed to load:", e)
+                }}
               >
                 <source src="/assets/about_us.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -97,8 +102,8 @@ export default function AboutUs() {
             {/* Right side - Text */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-2xl font-bold mb-3 text-foreground">Our Business</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-foreground">Our Business</h3>
+                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                   We are leading manufacturers and exporters of<br />
                   <span className="font-semibold">RED EAGLE BRAND</span> welding and cutting equipment,
                   accessories, and consumables. We specialize in brazing products, HSS and carbide cutting tools,
@@ -108,8 +113,8 @@ export default function AboutUs() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-3 text-foreground">Our Mission</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-foreground">Our Mission</h3>
+                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                   To provide the highest quality welding, cutting, and industrial equipment to customers worldwide,
                   ensuring reliability, durability, and performance in every product we deliver. We are committed to
                   international excellence and customer satisfaction.
@@ -117,7 +122,7 @@ export default function AboutUs() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-3 text-foreground">Why Choose Us</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-foreground">Why Choose Us</h3>
                 <ul className="space-y-3">
                   {[
                     "Premium quality products meeting international standards",
@@ -129,14 +134,14 @@ export default function AboutUs() {
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <span className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
-                      <span className="text-foreground">{item}</span>
+                      <span className="text-foreground text-base sm:text-lg">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-3 text-foreground">Certifications</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-foreground">Certifications</h3>
                 <div className="flex flex-wrap gap-3">
                   {certifications.map((cert, i) => (
                     <div
@@ -178,7 +183,7 @@ export default function AboutUs() {
               {productCategories.map((category, idx) => (
                 <div
                   key={idx}
-                  className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 transform hover:scale-105"
+                  className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300"
                 >
                   <h4 className="font-bold text-foreground mb-4 text-lg">{category.title}</h4>
                   <ul className="space-y-2">
@@ -201,7 +206,7 @@ export default function AboutUs() {
               return (
                 <div
                   key={index}
-                  className="bg-card border border-border rounded-xl p-6 text-center hover:border-primary/50 transition-all duration-300 transform hover:scale-105 group"
+                  className="bg-card border border-border rounded-xl p-6 text-center hover:border-primary/50 transition-all duration-300 group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="inline-block p-3 bg-primary/10 rounded-lg mb-4 group-hover:bg-primary/20 transition-colors">

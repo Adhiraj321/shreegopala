@@ -65,12 +65,12 @@ export default function Navbar() {
               />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg font-bold">
+              <h1 className="text-xl font-bold">
                 <span className="text-red-600">Shree</span>{" "}
                 <span className="text-blue-600">Gopala</span>{" "}
                 <span className="text-red-600">Enterprises</span>
               </h1>
-              <p className="text-xs text-muted-foreground">Welding & Cutting Products</p>
+              <p className="text-sm text-muted-foreground">Welding & Cutting Products</p>
             </div>
           </div>
 
@@ -81,7 +81,7 @@ export default function Navbar() {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-foreground hover:text-primary transition-colors duration-300 relative group cursor-pointer"
+                className="text-foreground text-lg hover:text-primary transition-colors duration-300 relative group cursor-pointer"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-foreground group-hover:w-full transition-all duration-500 ease-out" />
@@ -118,7 +118,7 @@ export default function Navbar() {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="block px-4 py-2 text-foreground hover:text-primary hover:bg-card rounded-lg transition-all duration-300 cursor-pointer"
+                className="block px-4 py-2 text-foreground text-lg hover:text-primary hover:bg-card rounded-lg transition-all duration-300 cursor-pointer"
               >
                 {item.label}
               </a>

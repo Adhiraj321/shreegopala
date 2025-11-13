@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     // Send email to company
     const response = await resend.emails.send({
       from: "Shree Gopala <onboarding@resend.dev>",
-      to: "shreegopalaenterprises@gmail.com",
+      to: "info@shreegopala.com",
       subject: `New Inquiry from ${validatedData.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -67,7 +67,7 @@ export async function POST(request: Request) {
             <h3 style="color: #000;">Contact Information:</h3>
             <p>
               <strong>Phone:</strong> +91-121-4328707 / +91-9897671442 / +91-8218613982<br>
-              <strong>Email:</strong> shreegopalaenterprises@gmail.com<br>
+              <strong>Email:</strong> info@shreegopala.com<br>
               <strong>Website:</strong> www.shreegopala.com<br>
               <strong>Address:</strong> G-32, New Dev Shree Plaza, T. P. Nagar, Baghpat Road, Meerut City - 250002 (U.P.) India
             </p>

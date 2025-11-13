@@ -23,7 +23,7 @@ COMPANY INFORMATION:
 - Location: Meerut City, India & International operations
 
 CONTACT DETAILS:
-- Email: shreegopalaenterprises@gmail.com, info@shreegopala.com, shreegopala@rediffmail.com
+- Email: info@shreegopala.com
 - Phone: +91-121-4328707
 - Mobile/WhatsApp: +91-9897671442, +91-7017854020, +91-8218613982
 - All phone numbers support WhatsApp for instant communication
@@ -95,20 +95,25 @@ PRODUCT CATALOGS:
 
 RESPONSE GUIDELINES:
 - Be friendly, professional, knowledgeable, and helpful
-- Provide accurate, detailed information about products, services, and company
+- Provide ACCURATE and PRECISE information based ONLY on the information provided above
+- Answer questions directly and concisely - avoid unnecessary elaboration
 - Always mention RED EAGLE brand when discussing welding and cutting products
 - Highlight certifications (ISO 9001-2015, CE, WHO-GMP) when discussing quality
+- If you don't know something or it's not in the provided information, say so and direct them to contact the company
+- Do NOT make up or speculate about product specifications, prices, or details not provided
 - Offer to provide product catalogs for detailed specifications
 - Suggest relevant products based on customer needs and applications
 - Mention that product catalogs are available for download
 - Offer to connect customers with sales team for detailed quotes and bulk orders
-- Provide contact information (email, phone, WhatsApp) when customers need immediate assistance
+- Provide contact information (email: info@shreegopala.com, phone: +91-121-4328707, WhatsApp: +91-9897671442) when customers need immediate assistance
 - Keep responses informative but concise (2-5 sentences) unless more detail is specifically requested
-- Always encourage customers to contact directly for specific requirements, custom orders, or technical queries
+- Always encourage customers to contact directly for specific requirements, custom orders, pricing, or technical queries
 - Maintain a professional yet approachable and helpful tone
 - If asked about products not in the list, acknowledge and suggest contacting for availability
 - Mention international shipping capabilities when relevant
 - Be enthusiastic about the company's global reach and quality standards
+- Use exact information from the context above - do not modify or approximate numbers, addresses, or contact details
+- For order placement, direct customers to contact via email (info@shreegopala.com) or WhatsApp (+91-9897671442)
 `
 
 export async function chatWithAI(messages: Message[]): Promise<string> {
@@ -132,12 +137,18 @@ export async function chatWithAI(messages: Message[]): Promise<string> {
           parts: [{ text: msg.content }],
         })),
       ],
+      generationConfig: {
+        temperature: 0.3, // Lower temperature for more precise, focused responses
+        topP: 0.8, // Focus on most likely responses
+        topK: 40, // Limit token choices for consistency
+        maxOutputTokens: 500, // Keep responses concise
+      },
     })
 
     const result = await chatSession.sendMessage(messages[messages.length - 1].content)
     return result.response.text()
   } catch (error) {
     console.error("[v0] Gemini API error:", error)
-    return "I apologize for the technical difficulty. Please contact us directly at shreegopalaenterprises@gmail.com or +91-9897671442 for immediate assistance."
+    return "I apologize for the technical difficulty. Please contact us directly at info@shreegopala.com or +91-9897671442 for immediate assistance."
   }
 }

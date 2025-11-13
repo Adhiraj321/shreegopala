@@ -1,21 +1,40 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Exo } from "next/font/google"
+import { Geist, Geist_Mono } from "next/font/google"
+import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
-const exo = Exo({ 
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-exo"
+const exo = localFont({
+  src: [
+    {
+      path: "../public/fonts/EXO350DB.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Exot350D.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-exo",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
-  title: "Shree Enterprise",
+  title: "Shree Gopala Enterprise",
   description:
-    "Premium automobile parts supplier serving international markets with quality components and expert service",
+    "Premium welding and cutting products manufacturer and exporter - RED EAGLE BRAND welding equipment, industrial & medical gas regulators, cutting tools, and specialty alloys. ISO 9001-2015, CE & WHO-GMP Certified.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    apple: "/favicon.png",
+  },
 }
 
 export default function RootLayout({

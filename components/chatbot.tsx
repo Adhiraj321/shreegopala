@@ -119,7 +119,7 @@ export function ChatBot() {
             <Card className="border-none shadow-xl rounded-2xl overflow-hidden !py-0">
               <CardHeader className="bg-primary text-primary-foreground p-4 rounded-t-2xl !px-4">
                 <div className="flex justify-between items-center">
-                  <CardTitle className="text-lg font-medium flex items-center gap-2">
+                  <CardTitle className="text-xl font-medium flex items-center gap-2" style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
                     <Avatar className="h-8 w-8 bg-primary-foreground text-primary flex items-center justify-center">
                       <MessageCircle className="h-4 w-4" />
                     </Avatar>
@@ -154,10 +154,14 @@ export function ChatBot() {
                           className={`wrap-break-word whitespace-pre-wrap max-w-[80%] rounded-2xl px-4 py-2 ${
                             message.role === "user" ? "bg-primary text-primary-foreground" : "bg-muted"
                           }`}
-                          style={{ textTransform: "none", fontVariant: "normal", fontFamily: "system-ui, -apple-system, sans-serif" }}
+                          style={{ 
+                            textTransform: "none", 
+                            fontVariant: "normal",
+                            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+                          }}
                         >
                           <div 
-                            className="font-normal text-sm sm:text-base"
+                            className="font-normal text-base sm:text-lg leading-relaxed"
                             style={{ textTransform: "none" }}
                           >
                             <div style={{ textTransform: "none" }}>
@@ -221,7 +225,8 @@ export function ChatBot() {
                           variant="outline"
                           size="sm"
                           onClick={() => handleSuggestedQuestion(question)}
-                          className="rounded-full text-xs transition-colors hover:bg-white! hover:text-black! hover:border-white! focus-visible:ring-2 focus-visible:ring-white/40"
+                          className="rounded-full text-sm transition-colors hover:bg-white! hover:text-black! hover:border-white! focus-visible:ring-2 focus-visible:ring-white/40"
+                          style={{ fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}
                         >
                           {question}
                         </Button>
@@ -235,8 +240,11 @@ export function ChatBot() {
                     placeholder="Type your message..."
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    className="rounded-xl border-2 border-white/30"
-                    style={{ textTransform: "none", fontFamily: "system-ui, -apple-system, sans-serif" }}
+                    className="rounded-xl border-2 border-white/30 text-base"
+                    style={{ 
+                      textTransform: "none",
+                      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+                    }}
                     disabled={isLoading}
                   />
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

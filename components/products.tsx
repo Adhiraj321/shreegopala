@@ -40,7 +40,7 @@ export default function Products({ onBooking }: ProductsProps) {
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             Our <span className="text-primary">Premium Products</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
+          <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto mb-6">
             Comprehensive range of welding and cutting products meeting international standards
           </p>
           <a
@@ -73,7 +73,7 @@ export default function Products({ onBooking }: ProductsProps) {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                <div className="relative bg-card border border-border rounded-xl overflow-hidden h-full transform transition-all duration-300 group-hover:scale-105 group-hover:border-primary/50 flex flex-col">
+                <div className="relative bg-card border border-border rounded-xl overflow-hidden h-full transform transition-all duration-300 group-hover:border-primary/50 flex flex-col">
                   <div className="relative h-80 w-full overflow-hidden bg-muted flex-1">
                     <img
                       src={product.image || "/placeholder.svg"}
@@ -81,6 +81,12 @@ export default function Products({ onBooking }: ProductsProps) {
                       loading={index < 2 ? "eager" : "lazy"}
                       fetchPriority={index === 0 ? "high" : "auto"}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        console.error(`Image failed to load: ${product.image}`)
+                        if (e.currentTarget.src !== "/placeholder.svg") {
+                          e.currentTarget.src = "/placeholder.svg"
+                        }
+                      }}
                     />
                   </div>
 
@@ -88,7 +94,7 @@ export default function Products({ onBooking }: ProductsProps) {
                   <div className="p-6">
                     <button
                       onClick={onBooking}
-                      className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105"
+                      className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-lg text-base font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105"
                     >
                       Book Now
                     </button>

@@ -5,7 +5,7 @@ import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 const exo = localFont({
   src: [
@@ -60,7 +60,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${exo.variable} font-sans antialiased bg-background text-foreground`}>
+      <body className={`${geist.variable} ${exo.variable} font-sans antialiased bg-background text-foreground`}>
         {children}
         <Analytics />
       </body>

@@ -78,9 +78,11 @@
 }
 
 @theme inline {
-  /* Updated font to use Exo */
-  --font-sans: var(--font-exo), "Geist", "Geist Fallback";
+  /* Use Geist as default font for the whole website */
+  --font-sans: var(--font-geist), "Geist", "Geist Fallback", system-ui, -apple-system, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback";
+  /* Brand font (Exo) for Shree Gopala Enterprise only */
+  --font-brand: var(--font-exo), "Geist", "Geist Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -273,4 +275,9 @@
 [data-chatbot-input]::placeholder {
   text-transform: none !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Brand font utility class for Shree Gopala Enterprise - uses Exo from public/fonts */
+.font-brand {
+  font-family: var(--font-exo), "Geist", "Geist Fallback", system-ui, sans-serif;
 }

@@ -50,7 +50,7 @@ export default function Hero() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance text-white">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance text-white font-brand">
             <span className="text-red-600 block"> RED EAGLE </span>
             <span className="text-white block">
               {" "}

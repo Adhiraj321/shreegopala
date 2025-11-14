@@ -67,7 +67,7 @@ export default function AboutUs() {
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
               <span className="block sm:inline">About</span>{" "}
-              <span className="block sm:inline">
+              <span className="block sm:inline font-brand">
                 <span className="text-red-600">Shree</span>{" "}
                 <span className="text-blue-600">Gopala</span>{" "}
                 <span className="text-red-600">Enterprises</span>

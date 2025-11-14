@@ -1,6 +1,7 @@
 "use client"
 
 import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, CheckCircle } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -17,11 +18,21 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-linear-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold">G</span>
+              <div className="w-10 h-10 rounded-lg overflow-hidden transform transition-transform duration-300 relative">
+                <Image
+                  src="/assets/logo.jpg"
+                  alt="Shree Gopala Enterprises Logo"
+                  fill
+                  className="object-cover"
+                  sizes="40px"
+                />
               </div>
               <div>
-                <h3 className="font-bold text-foreground">Shree Gopala</h3>
+                <h3 className="text-xl font-bold font-brand">
+                  <span className="text-red-600">Shree</span>{" "}
+                  <span className="text-blue-600">Gopala</span>{" "}
+                  <span className="text-red-600">Enterprises</span>
+                </h3>
                 <p className="text-sm text-muted-foreground">Welding & Cutting Products</p>
               </div>
             </div>
@@ -128,7 +139,7 @@ export default function Footer() {
         {/* Bottom section */}
         <div className="flex items-center justify-center">
           <p className="text-muted-foreground text-base text-center">
-            © {currentYear} Shree Gopala Enterprises. All rights reserved. GSTIN: 09ABVPT3316Q1ZL
+            © {currentYear} <span className="font-brand">Shree Gopala Enterprises</span>. All rights reserved. GSTIN: 09ABVPT3316Q1ZL
           </p>
 
           {/* Social links */}

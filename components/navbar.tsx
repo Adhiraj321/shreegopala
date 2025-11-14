@@ -64,13 +64,13 @@ export default function Navbar() {
                 sizes="40px"
               />
             </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold">
+            <div>
+              <h1 className="text-base sm:text-xl font-bold font-brand">
                 <span className="text-red-600">Shree</span>{" "}
                 <span className="text-blue-600">Gopala</span>{" "}
                 <span className="text-red-600">Enterprises</span>
               </h1>
-              <p className="text-sm text-muted-foreground">Welding & Cutting Products</p>
+              <p className="hidden sm:block text-sm text-muted-foreground">Welding & Cutting Products</p>
             </div>
           </div>
 

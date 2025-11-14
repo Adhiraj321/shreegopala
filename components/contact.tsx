@@ -151,7 +151,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-base">
               <div>
                 <p className="text-muted-foreground mb-1">Company Name</p>
-                <p className="text-foreground font-semibold">Shree Gopala Enterprises</p>
+                <p className="text-foreground font-semibold font-brand">Shree Gopala Enterprises</p>
               </div>
               <div>
                 <p className="text-muted-foreground mb-1">GSTIN</p>

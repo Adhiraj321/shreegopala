@@ -73,7 +73,7 @@ export default function AboutUs() {
                 <span className="text-red-600">Enterprises</span>
               </span>
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-xl max-w-3xl mx-auto whitespace-nowrap overflow-x-auto sm:whitespace-normal">
+            <p className="text-muted-foreground text-sm sm:text-xl max-w-3xl mx-auto px-4">
               ISO 9001-2015 & CE & WHO-GMP Certified - Manufacturers & Exporters of RED EAGLE BRAND Welding and Cutting
               Equipment, Industrial & Medical Gas Regulators, Cutting Tools, and Specialty Alloys
             </p>

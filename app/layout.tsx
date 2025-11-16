@@ -26,10 +26,7 @@ const exo = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.shreegopala.com"),
-  title: {
-    default: "Shree Gopala Enterprises - RED EAGLE Brand Welding & Cutting Products",
-    template: "%s | Shree Gopala Enterprises",
-  },
+  title: "Shree Gopala Enterprises - RED EAGLE Brand Welding & Cutting Products",
   description:
     "Shree Gopala Enterprises - Leading manufacturer and exporter of RED EAGLE BRAND welding and cutting products, industrial & medical gas regulators, cutting tools, and specialty alloys. ISO 9001-2015, CE & WHO-GMP Certified. Serving global markets with premium quality equipment.",
   keywords: [
@@ -114,8 +111,13 @@ export const metadata: Metadata = {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon.png", type: "image/png" },
+      { url: "/assets/logo.jpg", type: "image/jpeg", sizes: "512x512" },
     ],
-    apple: "/favicon.png",
+    apple: [
+      { url: "/assets/logo.jpg", sizes: "180x180", type: "image/jpeg" },
+      { url: "/favicon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
   },
   manifest: "/manifest.json",
   other: {
@@ -133,6 +135,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <title>Shree Gopala Enterprises - RED EAGLE Brand Welding &amp; Cutting Products</title>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="icon" href="/assets/logo.jpg" type="image/jpeg" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/assets/logo.jpg" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

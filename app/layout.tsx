@@ -71,10 +71,10 @@ export const metadata: Metadata = {
     siteName: "Shree Gopala Enterprises",
     images: [
       {
-        url: "/assets/logo.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Shree Gopala Enterprises - RED EAGLE Brand Welding & Cutting Products",
+        url: "https://www.shreegopala.com/assets/logo.jpg",
+        width: 512,
+        height: 512,
+        alt: "Shree Gopala Enterprises Logo - RED EAGLE Brand",
       },
     ],
     locale: "en_IN",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     title: "Shree Gopala Enterprises - RED EAGLE Brand Welding & Cutting Products",
     description:
       "Leading manufacturer and exporter of RED EAGLE BRAND welding and cutting products. ISO 9001-2015, CE & WHO-GMP Certified.",
-    images: ["/assets/logo.jpg"],
+    images: ["https://www.shreegopala.com/assets/logo.jpg"],
   },
   robots: {
     index: true,
@@ -164,7 +164,12 @@ export default function RootLayout({
                 "name": "Shree Gopala Enterprises",
                 "alternateName": "Shree Gopala Enterprise",
                 "url": "https://www.shreegopala.com",
-                "logo": "https://www.shreegopala.com/assets/logo.jpg",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.shreegopala.com/assets/logo.jpg",
+                  "width": 512,
+                  "height": 512
+                },
                 "description": "Leading manufacturer and exporter of RED EAGLE BRAND welding and cutting products, industrial & medical gas regulators, cutting tools, and specialty alloys. ISO 9001-2015, CE & WHO-GMP Certified.",
                 "address": {
                   "@type": "PostalAddress",
@@ -210,6 +215,12 @@ export default function RootLayout({
                 "@type": "LocalBusiness",
                 "@id": "https://www.shreegopala.com",
                 "name": "Shree Gopala Enterprises",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.shreegopala.com/assets/logo.jpg",
+                  "width": 512,
+                  "height": 512
+                },
                 "image": "https://www.shreegopala.com/assets/logo.jpg",
                 "description": "Manufacturer and exporter of RED EAGLE BRAND welding and cutting products, gas regulators, cutting tools, and specialty alloys.",
                 "address": {

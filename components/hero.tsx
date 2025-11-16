@@ -22,6 +22,7 @@ export default function Hero() {
         playsInline
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
+        aria-label="RED EAGLE welding and cutting products manufacturing showcase"
         onError={(e) => {
           console.error("Video failed to load:", e)
         }}

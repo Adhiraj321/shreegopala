@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.shreegopala.com/sitemap.xml
+
+# Disallow admin and private areas if any
+Disallow: /api/
+Disallow: /_next/
+
+# Allow all important pages
+Allow: /
+Allow: /#products
+Allow: /#catalog
+Allow: /#about
+Allow: /#contact
+

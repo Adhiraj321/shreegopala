@@ -1,0 +1,26 @@
+{
+  "name": "Shree Gopala Enterprises - RED EAGLE Brand Welding & Cutting Products",
+  "short_name": "Shree Gopala",
+  "description": "Leading manufacturer and exporter of RED EAGLE BRAND welding and cutting products, industrial & medical gas regulators, cutting tools, and specialty alloys. ISO 9001-2015, CE & WHO-GMP Certified.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "manufacturing", "industrial"],
+  "lang": "en-IN"
+}
+

@@ -90,6 +90,7 @@ export default function AboutUs() {
                 muted
                 playsInline
                 preload="metadata"
+                aria-label="Shree Gopala Enterprises manufacturing facility and welding products showcase"
                 onError={(e) => {
                   console.error("About video failed to load:", e)
                 }}

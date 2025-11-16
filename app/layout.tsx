@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Shree Gopala Enterprises - RED EAGLE Brand Welding & Cutting Products",
+    title: "Shree Gopala Enterprises | RED EAGLE Brand Welding & Cutting Products",
     description:
       "Leading manufacturer and exporter of RED EAGLE BRAND welding and cutting products, industrial & medical gas regulators, cutting tools, and specialty alloys. ISO 9001-2015, CE & WHO-GMP Certified.",
     url: "https://www.shreegopala.com",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shree Gopala Enterprises - RED EAGLE Brand Welding & Cutting Products",
+    title: "Shree Gopala Enterprises | RED EAGLE Brand Welding & Cutting Products",
     description:
       "Leading manufacturer and exporter of RED EAGLE BRAND welding and cutting products. ISO 9001-2015, CE & WHO-GMP Certified.",
     images: ["https://www.shreegopala.com/assets/logo.jpg"],
@@ -135,7 +135,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <title>Shree Gopala Enterprises - RED EAGLE Brand Welding &amp; Cutting Products</title>
+        <title>Shree Gopala Enterprises | RED EAGLE Brand Welding &amp; Cutting Products</title>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="icon" href="/assets/logo.jpg" type="image/jpeg" sizes="512x512" />
@@ -162,7 +162,6 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "Shree Gopala Enterprises",
-                "alternateName": "Shree Gopala Enterprise",
                 "url": "https://www.shreegopala.com",
                 "logo": {
                   "@type": "ImageObject",

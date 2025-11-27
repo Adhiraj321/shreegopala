@@ -34,6 +34,12 @@ export default function Catalog() {
       file: "/catalog/Mexin Welding Helmets & Goggles by NIKO.pdf",
       description: "Complete catalog of welding helmets and goggles by NIKO",
     },
+    {
+      id: 6,
+      name: "Silver Cadmium & Other Bearing Grades",
+      file: "/catalog/1_SILVER CADMIUM & OTHER BEARING GRADES pdf.(Autosaved).pdf",
+      description: "Comprehensive catalog of silver cadmium and other bearing grade products",
+    },
   ]
 
   const handleView = (file: string) => {

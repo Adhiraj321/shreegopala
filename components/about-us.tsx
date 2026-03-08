@@ -54,7 +54,7 @@ export default function AboutUs() {
     },
   ]
 
-  const brands = ["RED EAGLE", "NORTH", "FRONTLINE", "PAR WELD"]
+  const brands = ["RED EAGLE", "NORTH", "FRONTLINE", "PARWELD"]
 
   return (
     <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8">

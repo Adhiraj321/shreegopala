@@ -51,7 +51,7 @@ export default function Products({ onBooking }: ProductsProps) {
       thumbnail: "/silver brazing and copper phos ingot/metal_thumbnail.jpeg",
       subtitle: "Brazing alloys, rods, wires & foils",
       products: [
-        { id: 101, name: "Silver Brazing & Copper Phos Ingot", image: "/silver brazing and copper phos ingot/SILVER BRAZING AND COPPER PHOS INGOT..jpeg" },
+        { id: 101, name: "Copper Phos Ingot CuP-15 Grade 85/15", image: "/silver brazing and copper phos ingot/Copper Phos Ingot CuP-15 Grade 85-15.jpeg" },
         { id: 102, name: "Silver Brazing Rod", image: "/silver brazing and copper phos ingot/silver brazing rod.JPEG" },
         { id: 103, name: "Flux Coated Silver Solder", image: "/silver brazing and copper phos ingot/flux coated silver solder.JPEG" },
         { id: 104, name: "Silver & Copper Brazing Foil", image: "/silver brazing and copper phos ingot/silver and copper brazing foil.JPEG" },
@@ -67,12 +67,12 @@ export default function Products({ onBooking }: ProductsProps) {
       thumbnail: "/Cutter/cutter_thumbnail.jpeg",
       subtitle: "Gas cutting, welding & heating torches",
       products: [
-        { id: 201, name: "Brazing Torch Saffire-2 with 5 Copper Bend Pipe Premium Quality", image: "/Cutter/Brazing Torch saffire -2 with 5 copper bend pipe premium quality brazing torch saffire -2 with 5 copper be d pipe premium quality..jpeg" },
+        { id: 201, name: "Brazing Torch Saffire-2 with 5 Copper Bend Pipe Premium Quality", image: "/Cutter/Brazing Torch Saffire-2 with 5 Copper Bend Pipe Premium Quality.jpeg" },
         { id: 202, name: "Heating Torch High Pressure with Copper Burner 1 Meter Long Imported", image: "/Cutter/Heating torch high pressure with copper burner 1 meter long imported heating torch high pressure burner with copper burner 1 meter long inported.jpeg" },
-        { id: 203, name: "Heating Torch High Pressure with Shower Type Burner", image: "/Cutter/Heating torch high pressure with shower type burner.jpeg" },
-        { id: 204, name: "Heating Torch Single Line with SS Burner 63mm 1 Meter Long", image: "/Cutter/Heating torch single line with SS burner 63mm 1 meter long..jpeg" },
-        { id: 205, name: "High Pressure Brazing Torch", image: "/Cutter/High pressure brazing Torch.jpeg" },
-        { id: 206, name: "IMC Cutter for PUG Cutting Machine Heavy Duty", image: "/Cutter/IMC cutter for pug cutting Machine heavy duty..jpeg" },
+        { id: 203, name: "Heating Torch High Pressure with Shower Type Burner", image: "/Cutter/Heating Torch High Pressure with Shower Type Burner copy.jpeg" },
+        { id: 204, name: "Heating Torch Single Line with SS Burner 63mm 1 Meter Long", image: "/Cutter/Heating Torch Single Line with SS Burner 63mm 1 Meter Long.jpeg" },
+        { id: 205, name: "High Pressure Brazing Torch", image: "/Cutter/High Pressure Brazing Torch copy.jpeg" },
+        { id: 206, name: "IMC Cutter for PUG Cutting Machine Heavy Duty", image: "/Cutter/IMC Cutter for PUG Cutting Machine Heavy Duty.jpeg" },
         { id: 207, name: "3 in 1 Gas Cutting, Welding and Heating Torch Premium Quality Imported", image: "/Cutter/3 in 1 Gas Cutting, Welding and Heating Torch premium quality Imported3 in 1 Gas Cutting, Welding and Heating Torch premium quality Imported.jpg" },
         { id: 208, name: "Gas Cutting Torch Forged Heavy Duty", image: "/Cutter/Gas Cutting Torch Forged heavy dutyGas Cutting Torch Forged heavy duty.jpg" },
         { id: 209, name: "Gas Cutting Torch Polish with Aluminium Liver", image: "/Cutter/Gas Cutting Torch Polish with Aluminium liver.jpg" },
@@ -81,7 +81,7 @@ export default function Products({ onBooking }: ProductsProps) {
         { id: 212, name: "NM Gas Cutting Torch Premium Quality Imported", image: "/Cutter/NM Gas Cutting Torch premium quality imported.jpg" },
         { id: 213, name: "NM Cutter with Aluminium Anodised Handle", image: "/Cutter/NM cutter with Aluminium Anodised Handle.jpg" },
         { id: 214, name: "Straight Head Cutter 36\" Long", image: "/Cutter/Straight head cutter 36 long.jpg" },
-        { id: 215, name: "Straight Head Cutter 48\" Long", image: "/Cutter/Straight head cutter 48 longStraight head cutter 48 long.jpg" },
+        { id: 215, name: "Straight Head Cutter 48\" Long", image: "/Cutter/Straight Head Cutter 48\" Long.png" },
         { id: 216, name: "Brazing Torch with Copper Bend Pipe Imported", image: "/Cutter/brazing Torch with copper bend pipe imported.jpg" },
         { id: 217, name: "High Pressure Heating Torch 1 Meter Long", image: "/Cutter/high pressure heating torch 1 meter long.jpg" },
       ],
@@ -176,7 +176,7 @@ export default function Products({ onBooking }: ProductsProps) {
         </div>
 
         {/* Side-by-side Thumbnails */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 gap-3 sm:gap-6 md:gap-8 max-w-2xl mx-auto">
           {categories.map((category) => (
             <div
               key={category.title}

@@ -1,5 +1,6 @@
 "use client"
 
+import { COMPANY_EMAILS } from "@/lib/contact-emails"
 import { X, Mail, MessageCircle, Phone } from "lucide-react"
 
 interface BookingProps {
@@ -13,7 +14,7 @@ export default function Booking({ onClose }: BookingProps) {
     { number: "+91-8218613982", whatsapp: "918218613982" },
   ]
 
-  const email = "info@shreegopala.com"
+  const emailList = COMPANY_EMAILS.join(",")
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
@@ -34,7 +35,7 @@ export default function Booking({ onClose }: BookingProps) {
 
           {/* Email Option */}
           <a
-            href={`mailto:${email}?subject=Order Inquiry`}
+            href={`mailto:${emailList}?subject=Order Inquiry`}
             className="flex items-center gap-4 p-4 bg-background border border-border rounded-lg hover:border-primary/50 transition-all duration-300 cursor-pointer group"
           >
             <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
@@ -42,7 +43,11 @@ export default function Booking({ onClose }: BookingProps) {
             </div>
             <div className="flex-1">
               <h3 className="font-semibold text-foreground">Send us an Email</h3>
-              <p className="text-sm text-muted-foreground">{email}</p>
+              <div className="text-sm text-muted-foreground space-y-0.5">
+                {COMPANY_EMAILS.map((email) => (
+                  <p key={email}>{email}</p>
+                ))}
+              </div>
             </div>
           </a>
 

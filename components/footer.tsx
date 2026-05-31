@@ -1,5 +1,6 @@
 "use client"
 
+import { COMPANY_EMAILS } from "@/lib/contact-emails"
 import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, CheckCircle } from "lucide-react"
 import Image from "next/image"
 
@@ -96,13 +97,16 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-2">
                 <Mail size={16} className="text-primary mt-1 shrink-0" />
-                <div className="text-base">
-                  <a
-                    href="mailto:info@shreegopala.com"
-                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer block"
-                  >
-                    info@shreegopala.com
-                  </a>
+                <div className="text-base space-y-1">
+                  {COMPANY_EMAILS.map((email) => (
+                    <a
+                      key={email}
+                      href={`mailto:${email}`}
+                      className="text-muted-foreground hover:text-primary transition-colors cursor-pointer block"
+                    >
+                      {email}
+                    </a>
+                  ))}
                 </div>
               </div>
               <div className="flex items-start gap-2">

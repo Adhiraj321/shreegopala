@@ -190,7 +190,7 @@ export default function RootLayout({
                     "@type": "ContactPoint",
                     "telephone": "+91-9897671442",
                     "contactType": "Sales",
-                    "email": "info@shreegopala.com"
+                    "email": "sales@shreegopala.com"
                   }
                 ],
                 "sameAs": [],
@@ -237,7 +237,7 @@ export default function RootLayout({
                 },
                 "url": "https://www.shreegopala.com",
                 "telephone": "+91-121-4328707",
-                "email": "info@shreegopala.com",
+                "email": ["info@shreegopala.com", "sales@shreegopala.com", "shreegopalameerut@gmail.com"],
                 "priceRange": "$$",
                 "openingHoursSpecification": {
                   "@type": "OpeningHoursSpecification",

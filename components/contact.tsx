@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import { COMPANY_EMAILS } from "@/lib/contact-emails"
 import { Mail, Phone, MapPin, Send, Loader2, CheckCircle, AlertCircle } from "lucide-react"
 
 export default function Contact() {
@@ -59,7 +60,7 @@ export default function Contact() {
 
   const contactInfo = [
     { icon: Phone, label: "Phone", value: "+91-121-4328707 / +91-9897671442 / +91-8218613982" },
-    { icon: Mail, label: "Email", value: "info@shreegopala.com" },
+    { icon: Mail, label: "Email", value: COMPANY_EMAILS.join(" / ") },
     { icon: MapPin, label: "Location", value: "Meerut City, India & International" },
   ]
 
@@ -123,12 +124,17 @@ export default function Contact() {
                       </a>
                     </div>
                   ) : info.label === "Email" ? (
-                    <a
-                      href="mailto:info@shreegopala.com"
-                      className="text-base sm:text-lg text-muted-foreground hover:text-primary transition-colors cursor-pointer break-words px-2"
-                    >
-                      {info.value}
-                    </a>
+                    <div className="flex flex-col gap-1 px-2">
+                      {COMPANY_EMAILS.map((email) => (
+                        <a
+                          key={email}
+                          href={`mailto:${email}`}
+                          className="text-base sm:text-lg text-muted-foreground hover:text-primary transition-colors cursor-pointer break-words"
+                        >
+                          {email}
+                        </a>
+                      ))}
+                    </div>
                   ) : info.label === "Location" ? (
                     <a
                       href="https://maps.app.goo.gl/wAjZugtPvavoiGwp6"
@@ -165,12 +171,17 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-muted-foreground mb-1">Email</p>
-                <a
-                  href="mailto:info@shreegopala.com"
-                  className="text-foreground font-semibold hover:text-primary transition-colors cursor-pointer"
-                >
-                  info@shreegopala.com
-                </a>
+                <div className="space-y-1">
+                  {COMPANY_EMAILS.map((email) => (
+                    <a
+                      key={email}
+                      href={`mailto:${email}`}
+                      className="text-foreground font-semibold hover:text-primary transition-colors cursor-pointer block"
+                    >
+                      {email}
+                    </a>
+                  ))}
+                </div>
               </div>
               <div>
                 <p className="text-muted-foreground mb-1">Website</p>

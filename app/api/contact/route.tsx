@@ -1,7 +1,10 @@
+import { COMPANY_EMAILS, INFO_EMAIL } from "@/lib/contact-emails"
 import { Resend } from "resend"
 import { z } from "zod"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+
+const FROM_EMAIL = `Shree Gopala <${INFO_EMAIL}>`
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -17,10 +20,11 @@ export async function POST(request: Request) {
     // Validate the request body
     const validatedData = contactSchema.parse(body)
 
-    // Send email to company
-    const response = await resend.emails.send({
-      from: "Shree Gopala <onboarding@resend.dev>",
-      to: "info@shreegopala.com",
+    // Send email to company inbox
+    const { error: inquiryError } = await resend.emails.send({
+      from: FROM_EMAIL,
+      to: [...COMPANY_EMAILS],
+      replyTo: validatedData.email,
       subject: `New Inquiry from ${validatedData.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -45,9 +49,14 @@ export async function POST(request: Request) {
       `,
     })
 
+    if (inquiryError) {
+      console.error("Inquiry email error:", inquiryError)
+      return Response.json({ error: "Failed to send message. Please try again." }, { status: 500 })
+    }
+
     // Send confirmation email to user
-    await resend.emails.send({
-      from: "Shree Gopala <onboarding@resend.dev>",
+    const { error: confirmationError } = await resend.emails.send({
+      from: FROM_EMAIL,
       to: validatedData.email,
       subject: "We received your inquiry - Shree Gopala Enterprises",
       html: `
@@ -67,7 +76,7 @@ export async function POST(request: Request) {
             <h3 style="color: #000;">Contact Information:</h3>
             <p>
               <strong>Phone:</strong> +91-121-4328707 / +91-9897671442 / +91-8218613982<br>
-              <strong>Email:</strong> info@shreegopala.com<br>
+              <strong>Email:</strong> ${COMPANY_EMAILS.join(" / ")}<br>
               <strong>Website:</strong> www.shreegopala.com<br>
               <strong>Address:</strong> G-32, New Dev Shree Plaza, T. P. Nagar, Baghpat Road, Meerut City - 250002 (U.P.) India
             </p>
@@ -80,6 +89,11 @@ export async function POST(request: Request) {
         </div>
       `,
     })
+
+    if (confirmationError) {
+      console.error("Confirmation email error:", confirmationError)
+      // Inquiry already reached info@ — don't fail the whole request
+    }
 
     return Response.json({ success: true, message: "Email sent successfully" }, { status: 200 })
   } catch (error) {

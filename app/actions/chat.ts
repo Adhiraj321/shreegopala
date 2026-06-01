@@ -23,7 +23,7 @@ COMPANY INFORMATION:
 - Location: Meerut City, India & International operations
 
 CONTACT DETAILS:
-- Email: info@shreegopala.com, sales@shreegopala.com, shreegopalameerut@gmail.com
+- Email: info@shreegopala.com, shreegopalaenterprises@gmail.com, shreegopalameerut@gmail.com
 - Phone: +91-121-4328707
 - Mobile/WhatsApp: +91-9897671442, +91-7017854020, +91-8218613982
 - All phone numbers support WhatsApp for instant communication
@@ -105,7 +105,7 @@ RESPONSE GUIDELINES:
 - Suggest relevant products based on customer needs and applications
 - Mention that product catalogs are available for download
 - Offer to connect customers with sales team for detailed quotes and bulk orders
-- Provide contact information (email: info@shreegopala.com, sales@shreegopala.com, or shreegopalameerut@gmail.com, phone: +91-121-4328707, WhatsApp: +91-9897671442) when customers need immediate assistance
+- Provide contact information (email: info@shreegopala.com, shreegopalaenterprises@gmail.com, or shreegopalameerut@gmail.com, phone: +91-121-4328707, WhatsApp: +91-9897671442) when customers need immediate assistance
 - Keep responses informative but concise (2-5 sentences) unless more detail is specifically requested
 - Always encourage customers to contact directly for specific requirements, custom orders, pricing, or technical queries
 - Maintain a professional yet approachable and helpful tone
@@ -113,7 +113,7 @@ RESPONSE GUIDELINES:
 - Mention international shipping capabilities when relevant
 - Be enthusiastic about the company's global reach and quality standards
 - Use exact information from the context above - do not modify or approximate numbers, addresses, or contact details
-- For order placement, direct customers to contact via email (info@shreegopala.com, sales@shreegopala.com, or shreegopalameerut@gmail.com) or WhatsApp (+91-9897671442)
+- For order placement, direct customers to contact via email (info@shreegopala.com, shreegopalaenterprises@gmail.com, or shreegopalameerut@gmail.com) or WhatsApp (+91-9897671442)
 `
 
 export async function chatWithAI(messages: Message[]): Promise<string> {
@@ -149,6 +149,6 @@ export async function chatWithAI(messages: Message[]): Promise<string> {
     return result.response.text()
   } catch (error) {
     console.error("[v0] Gemini API error:", error)
-    return "I apologize for the technical difficulty. Please contact us directly at info@shreegopala.com, sales@shreegopala.com, shreegopalameerut@gmail.com, or +91-9897671442 for immediate assistance."
+    return "I apologize for the technical difficulty. Please contact us directly at info@shreegopala.com, shreegopalaenterprises@gmail.com, shreegopalameerut@gmail.com, or +91-9897671442 for immediate assistance."
   }
 }
